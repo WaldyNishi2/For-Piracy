@@ -62,6 +62,11 @@ BUTTON_LOCK = is_enabled(environ.get("BUTTON_LOCK", "True"), True)
 SHORT_URL = environ.get("SHORT_URL")
 SHORT_API = environ.get("SHORT_API")
 
+AUTO_DELETE_SECONDS = int(environ.get('AUTO_DELETE_SECONDS', 300))
+AUTO_DELETE = environ.get('AUTO_DELETE', True)
+if AUTO_DELETE == "True":
+    AUTO_DELETE = True
+
 # Others
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
